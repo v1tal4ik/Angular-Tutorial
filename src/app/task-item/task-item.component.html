@@ -1,0 +1,13 @@
+<div class="task-item" *ngIf="!isEdit; else editBlock" (click)="toggleEdit()">
+  {{ index + 1 }}.{{ task }}
+  <span class="controll-block" (click)="removeItem(index)">&times;</span>
+</div>
+
+<ng-template #editBlock>
+  <input
+    type="text"
+    class="task-item edit"
+    [(ngModel)]="task"
+    (blur)="toggleEdit()"
+  />
+</ng-template>
