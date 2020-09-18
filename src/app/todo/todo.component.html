@@ -1,0 +1,38 @@
+<div class="task-list-wrapper">
+  <app-input-block
+    (onAddNewTask)="addNewTask($event)"
+    (onLoadNewTasks)="loadNewTasks()"
+  ></app-input-block>
+
+  <div class="task-list-container">
+    <app-task-list
+      tableName="Todo"
+      [tasks]="tasks"
+      (onEditTask)="editTask($event)"
+      (onRemoveTask)="removeTask($event)"
+    ></app-task-list>
+
+    <app-task-list
+      tableName="History 1"
+      [tasks]="historyOneTasks"
+      (onEditTask)="editTask($event)"
+      (onRemoveTask)="removeTask($event)"
+    ></app-task-list>
+
+    <app-task-list
+      tableName="History 2"
+      [tasks]="historySecondTasks"
+      (onRemoveTask)="removeTask($event)"
+    ></app-task-list>
+  </div>
+  <div
+    class="no-task-msg"
+    *ngIf="
+      tasks.length === 0 &&
+      historyOneTasks.length === 0 &&
+      historySecondTasks.length === 0
+    "
+  >
+    Not task yet:(
+  </div>
+</div>

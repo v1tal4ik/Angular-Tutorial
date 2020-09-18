@@ -6,18 +6,18 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./input-block.component.scss'],
 })
 export class InputBlockComponent {
-  @Output() onAddNewItem = new EventEmitter<string>();
-  @Output() onFetchNewTask = new EventEmitter<string>();
+  @Output() onAddNewTask = new EventEmitter<string>();
+  @Output() onLoadNewTasks = new EventEmitter<string>();
   value: string = '';
 
-  createNewItem = () => {
+  createNewTask = () => {
     if (this.value) {
-      this.onAddNewItem.emit(this.value);
+      this.onAddNewTask.emit(this.value);
     }
     this.value = '';
   };
 
-  fetchNewTask = () => {
-    this.onFetchNewTask.emit();
+  loadNewTasks = () => {
+    this.onLoadNewTasks.emit();
   };
 }

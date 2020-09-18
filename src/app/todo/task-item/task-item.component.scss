@@ -1,0 +1,48 @@
+.task-item-wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10px;
+  padding: 5px;
+  border: 1px solid #797979;
+  & span {
+    margin: 0 10px;
+    font-size: 12px;
+  }
+  & p {
+    margin: 0;
+    padding: 5px;
+  }
+}
+
+.todo-text {
+  border-radius: 4px;
+  &:hover {
+    cursor: pointer;
+    background: #979090;
+  }
+}
+
+.edit {
+  text-align: center;
+  width: 50%;
+}
+
+.controll-block {
+  position: absolute;
+  top: -6px;
+  right: -8px;
+  padding: 5px;
+  font-size: 16px !important;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    cursor: pointer;
+    color: red;
+  }
+}
+
+.arrow {
+  position: relative;
+  top: 5px;
+}

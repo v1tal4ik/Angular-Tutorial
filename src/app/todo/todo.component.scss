@@ -3,6 +3,12 @@
   border: 1px dashed #000;
 }
 
+.task-list-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
 .no-task-msg {
   text-align: center;
   margin-top: 30px;

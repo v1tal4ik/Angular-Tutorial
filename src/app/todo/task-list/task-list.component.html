@@ -1,0 +1,10 @@
+<div class="task-list">
+  <h3>{{ tableName }}</h3>
+  <app-task-item
+    *ngFor="let task of tasks; let index = index"
+    [task]="task"
+    [index]="index"
+    (onEditTask)="editTask($event)"
+    (onRemoveTask)="removeTask($event)"
+  ></app-task-item>
+</div>

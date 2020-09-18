@@ -1,0 +1,21 @@
+<div class="task-item-wrapper">
+  <p class="todo-text" *ngIf="!isEdit; else editBlock" (click)="toggleEdit()">
+    {{ task.title }}
+    <span class="controll-block" (click)="removeTask(index)">&times;</span>
+  </p>
+  <span class="arrow" *ngIf="task.history2">&larr;</span>
+  <p class="history2-text" *ngIf="task.history2">{{ task.history2 }}</p>
+  <span class="arrow" *ngIf="task.history1">&larr;</span>
+  <p class="history1-text" *ngIf="task.history1">{{ task.history1 }}</p>
+  <span class="controll-block" (click)="removeTask(index)">&times;</span>
+</div>
+
+<ng-template #editBlock>
+  <input
+    type="text"
+    class="task-item edit"
+    [(ngModel)]="task.title"
+    (focus)="savePreviousValue($event.target.value)"
+    (blur)="editTask()"
+  />
+</ng-template>
