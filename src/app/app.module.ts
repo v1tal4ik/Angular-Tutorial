@@ -2,14 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { TodoModule } from './todo/todo.module';
-import { RouterModule, Routes } from '@angular/router';
-import { TodoComponent } from './todo/todo.component';
-
-const appRoutes: Routes = [{ path: '', component: TodoComponent }];
+import { AppRoutingModule } from './app-routing.module';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [BrowserModule, TodoModule, RouterModule.forRoot(appRoutes)],
+  declarations: [AppComponent, AboutComponent],
+  imports: [BrowserModule, TodoModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
 })

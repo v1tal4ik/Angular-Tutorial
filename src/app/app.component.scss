@@ -1,0 +1,16 @@
+nav {
+  text-align: center;
+  margin-top: 50px;
+  a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    margin-right: 15px;
+    background: #fff;
+    color: #000;
+  }
+  .active {
+    color: #fff;
+    background: #2a94db;
+  }
+}
